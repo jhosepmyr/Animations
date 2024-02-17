@@ -1,0 +1,100 @@
+/* La duraciones de la animacion se dividira respecto a los porcentajes
+Ademas podemos usar si queremos de inicio a fin (to-from)*/
+@keyframes blink{
+    0% {
+        transform: scale(1, 1);
+    }
+    15% {
+        transform: scale(1, 0.2);
+    }
+    20% {
+        transform: scale(1, 1);
+    }
+}
+@keyframes movenment-ear-right {
+    0% {
+        transform: rotate(0deg);
+    }
+    5% {
+        transform: rotate(-5deg);
+    }
+    10% {
+        transform: rotate(-10deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes movenment-ear-left {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(-30deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+@keyframes movement-rabit-1 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes movement-rabit-2 {
+    /* Acordarse que el cambio de posicion es respecto al origin del estado inicial, no de su estado anterior */
+    0% {
+        transform: translate(0, 0);
+    }
+    12.5% {
+        transform: translate(50%, 0);
+    }
+    37.5% {
+        transform: translate(50%, 100%);
+    }
+    62.5% {
+        transform: translate(-50%, 100%);
+    }
+    87.5% {
+        transform: translate(-50%, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes cards{
+    0%{
+        transform: rotateZ(0);
+    }
+    15%{
+        transform: rotateZ(5deg);
+    }
+    20%{
+        transform: rotateZ(0deg);
+    }
+    35%{
+        transform: rotateZ(-5deg);
+    }
+    45%{
+        transform: rotateZ(0deg);
+    }
+    75%{
+        transform: rotateY(-180deg);
+    }
+    100%{
+        transform: rotateY(-180deg);
+    }
+}

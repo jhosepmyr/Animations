@@ -1,0 +1,27 @@
+.ground{
+    bottom: 0;
+    width: 60%;
+    height: 70%;
+    background-color: map-get(map-get($color-animation,'obstacules'),'bottom');
+    border-radius: 2rem 2rem 0 0;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px 0px  map-get($color-animation,'border');
+    &::before,&::after{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 10%;
+        background-position:  10px 0, 10px 0, 0 0, 0 0;
+        background-size: 2rem 10rem;
+        background-repeat: repeat;
+    }
+    &::before{
+        z-index: 2;
+        background-image:  linear-gradient(135deg, map-get(map-get($color-animation,'obstacules'),'top') 25%, transparent 25%), linear-gradient(225deg, map-get(map-get($color-animation,'obstacules'),'top') 25%, transparent 25%), linear-gradient(45deg, map-get(map-get($color-animation,'obstacules'),'top') 25%, transparent 25%), linear-gradient(315deg, map-get(map-get($color-animation,'obstacules'),'top') 25%, transparent 25%);
+    }
+    &::after{
+        z-index: 1;
+        top:3%;
+        background-image:  linear-gradient(135deg, map-get(map-get($color-animation,'obstacules'),'middle') 25%, transparent 25%), linear-gradient(225deg, map-get(map-get($color-animation,'obstacules'),'middle') 25%, transparent 25%), linear-gradient(45deg, map-get(map-get($color-animation,'obstacules'),'middle') 25%, transparent 25%), linear-gradient(315deg, map-get(map-get($color-animation,'obstacules'),'middle') 25%, transparent 25%);
+    }
+}

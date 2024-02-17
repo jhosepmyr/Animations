@@ -1,0 +1,99 @@
+.animationLand{
+    width: clamp(30rem, 90%, 40rem);
+    height: 80vh;
+    min-height: 60rem;
+    border-radius: 2rem;
+    border: 0.5rem solid map-get($map: $color-animation, $key: 'border');
+    background-color: map-get($map: $color-animation, $key: 'background');
+    box-shadow: 0 0.5rem 2rem  map-get($map: $color-animation, $key: 'border');
+    overflow: hidden;
+    /* Contador en CSS */
+    counter-reset: score;
+    &__text{
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        font-weight: bold;
+        color: map-get(map-get($color-animation,'text'),'title');
+        &--big{
+            font-size: 2.5rem;
+        }
+        &--small{
+            font-size: 1.5rem;
+            top: 10%;
+        }
+    }
+    &__relative{
+        position: relative;
+    }
+    &__absolute{
+        position: absolute;
+    }
+    &__rabit{
+        animation-iteration-count: infinite;
+        &--1{
+            animation-duration: 2s;
+            z-index: 1;
+            right: 25%;
+            top: 16%;
+            animation-name: movement-rabit-1;
+            animation-delay: 1s;
+        }
+        &--2{
+            animation-duration: 2s;
+            z-index: 2;
+            left: 25%;
+            top: 16%;
+            animation-name: movement-rabit-1;
+        }
+        &--3{
+            animation-duration: 5s;
+            z-index: 4;
+            top: 38%;
+            left: 20%;
+            animation-name: movement-rabit-2;
+        }
+        &--4{
+            animation-duration: 5s;
+            z-index: 6;
+            top: 59%;
+            right: 20%;
+            animation-name: movement-rabit-2;
+            animation-delay: 1s;
+        }
+    }
+    &__ground{
+        &--1{
+            z-index: 3;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &--2{
+            z-index: 5;
+            transform: translateY(30%);
+        }
+        &--3{
+            z-index: 7;
+            right: 0;
+            transform: translateY(60%);
+        }
+    }
+    &__input{
+        z-index: 4;
+        width: 100%;
+        height: 95%;
+        bottom: 0;
+        opacity: 0;
+        /* Aqui pongo esto para que se sobreponga a la animacion del cuerpo y de la oreja derecha los cuales estan en 3d y con perspective */
+        transform: translateZ(15px);
+        cursor: pointer;
+        &:checked{
+            counter-increment: score;
+        }
+    }
+    &__counter{
+        &::after{
+            content: counter(score);
+        }
+    }
+}

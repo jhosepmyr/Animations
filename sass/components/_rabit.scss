@@ -1,0 +1,75 @@
+.rabit{
+    width: 20%;
+    aspect-ratio: 1/1.5;
+    transform-style: preserve-3d;
+    perspective: 800px;
+    &__body{
+        z-index: 2;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        aspect-ratio: 1/0.81;
+        background-color: map-get(map-get($color-animation,'rabit'),'body');
+        border-radius: 50%;
+        // agrego este translateZ para que se sobreponga a la animacion 3d de la left ear
+        transform: translateZ(10px);
+        &::after, &::before{
+            z-index: 3;
+            position: absolute;
+            top: 25%;
+            content: '';
+            display: inline-block;
+            width: 10%;
+            height: 10%;
+            border-radius: 100%;
+            background-color: map-get(map-get($color-animation,'rabit'),'eyes');
+            /* Nombre de la animaciones */
+            animation-name: blink;
+            /* Duraciones de la animaciones */
+            animation-duration: 2s;
+            /* Cuantas veces se repite la animacion */
+            animation-iteration-count: infinite;
+        }
+        &::after{
+            left: 30%;
+        }
+        &::before{
+            right: 30%;
+        }
+    }
+    &__ear{
+        position: absolute;
+        height: 50%;
+        aspect-ratio: 0.9/2;
+        background-color: map-get(map-get($color-animation,'rabit'),'body');
+        border-radius: 90%;
+        top: 10%;
+        &--left{
+            left: 10%;
+            transform-origin: bottom right;
+            animation-name: movenment-ear-right;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        &--right{
+            right: 10%;
+            transform-origin: bottom;
+            animation-name: movenment-ear-left;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        &--left::after, &--right::after{
+            z-index: 2;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            content: '';
+            margin: 0 auto;
+            height: 80%;
+            aspect-ratio: 0.8/2;
+            border-radius: inherit;
+            background-color: map-get(map-get($color-animation,'rabit'),'ear');
+        }
+    }
+}

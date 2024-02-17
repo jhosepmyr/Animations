@@ -1,0 +1,74 @@
+.menu{
+    width: 90%;
+    max-width: 50rem;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+    &__specialButton{
+        position: relative;
+        width: 50%;
+        aspect-ratio: 1/1;
+        min-width: 15rem;
+        max-width: 20rem;
+        display: grid;
+        place-items: center;
+        &:hover .menu__button{
+            transform: scale(1.5);
+            border-width: 0.2rem;
+            opacity: 0.1;
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+        }
+        &:hover .menu__icon{
+            transform: scale(0.5);
+            opacity: 0;
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+        }
+        &:hover .menu__opciones{
+            opacity: 1;
+            transition-property: opacity;
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+            transition-delay: 0.5s;
+        }
+    }
+    &__button{
+        width: 50%;
+        height: 50%;
+        display: grid;
+        place-items: center;
+        border-radius: 100%;
+        border: 0.3rem dashed $opciones;
+        transition-duration: 1s;
+    }
+    &__icon{
+        font-size: 4rem;
+        transition-duration: 1s;
+    }
+    &__opciones{
+        height: 100%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0;
+        text-align: center;
+        transition-duration: 1s;
+    }
+    &__item{
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 2.5rem;
+        font-weight: bolder;
+        font-family: 'Anton', sans-serif;
+        letter-spacing: 0.5rem;
+        background-color: rgba(78, 77, 77, 0.342);
+        box-shadow: -3px 2px 15px 4px rgba(0,0,0,0.4);
+        cursor: pointer;
+    }
+}

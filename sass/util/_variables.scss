@@ -1,0 +1,23 @@
+$color-animation: (
+    text:(
+        'title': #9c2d2d,
+    ),
+    rabit:(
+        'body': rgb(255, 255, 255),
+        'ear': rgb(250, 178, 240),
+        'eyes': rgb(0, 0, 0),
+    ),
+    obstacules:(
+        'top': #289c4b,
+        'middle': #5c311d,
+        'bottom': #a05431
+    ),
+    cloud:(
+        'primary': #ffffff,
+        'secondary': #289c4b
+    ),
+    'background': #ace1f1,
+    'border': #000000
+);
+
+$opciones: #ffffff;
